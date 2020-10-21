@@ -2,18 +2,18 @@ import RPi.GPIO as GPIO
 import time
 
 red_pin = 11
-blue_pin =  12
+blue_pin = 12
 green_pin = 13
 
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(red_pin,GPIO.OUT)
-GPIO.setup(blue_pin,GPIO.OUT)
-GPIO.setup(green_pin,GPIO.OUT)
+GPIO.setup(red_pin, GPIO.OUT)
+GPIO.setup(blue_pin, GPIO.OUT)
+GPIO.setup(green_pin, GPIO.OUT)
 
-GPIO.output(red_pin, GPIO.LOW)  
-GPIO.output(blue_pin, GPIO.LOW)  
-GPIO.output(green_pin, GPIO.LOW)  
+GPIO.output(red_pin, GPIO.LOW)
+GPIO.output(blue_pin, GPIO.LOW)
+GPIO.output(green_pin, GPIO.LOW)
 
 
 red = GPIO.PWM(red_pin, 1000)
@@ -44,9 +44,9 @@ try:
 except KeyboardInterrupt:
     for led in leds:
         led.stop()
-        
-    GPIO.output(red_pin, GPIO.HIGH)  
-    GPIO.output(blue_pin, GPIO.HIGH)  
-    GPIO.output(green_pin, GPIO.HIGH)  
+
+    GPIO.output(red_pin, GPIO.HIGH)
+    GPIO.output(blue_pin, GPIO.HIGH)
+    GPIO.output(green_pin, GPIO.HIGH)
 
     GPIO.cleanup()
